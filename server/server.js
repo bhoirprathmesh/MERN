@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require("express");   // we are using express in this application
 const app = express();
 const router = require("./router/auth-router");
+const connectDb = require("./utils/db");
 
 app.use(express.json());
 //? This line of code adds Express middleware that parses 
@@ -16,8 +18,11 @@ app.use("/api/auth", router);
 
 // to start the server
 const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`Server is Running at port: ${PORT}`);
+
+connectDb().then( () => {
+    app.listen(PORT, () => {
+        console.log(`Server is Running at port: ${PORT}`);
+    });
 });
 
 
