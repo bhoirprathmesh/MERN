@@ -53,7 +53,8 @@ const register = async (req, res) => {
             password /*:hash_password*/
         });
 
-        res.status(201).json({ msg : "Registration Successful", 
+        res.status(201).json({ 
+            msg : "Registration Successful", 
             token: await userCreated.generateToken(), 
             userId: userCreated._id.toString(),
         }); 
@@ -61,7 +62,8 @@ const register = async (req, res) => {
         // and compatibility across different JWT libraries and systems. It also aligns with the 
         // expectation that claims in a JWT are represented as strings.
     } catch (error) {
-        res.status(500).json("Internal Server Error");
+        // res.status(500).json("Internal Server Error");
+        next(error);
     }
 };
 
@@ -70,9 +72,29 @@ const register = async (req, res) => {
 // *----------------------
 const login = async (req, res) => {
     try {
-        res.status(200).send("Welcome To Login Page MERN !");
+        const { email, password } = req.body;
+
+        const userExist = await User.findOne({ email });
+        console.log(userExist);
+
+        if(!userExist) {
+            return res.status(400).json({ message : "Invalid Credentials"});
+        }
+
+        // const user = await bcrypt.compare(password, userExist.password);
+        const user = await userExist.comparePassword(password);
+
+        if(user){
+            res.status(200).json({ 
+                msg : "Login Successful", 
+                token: await userExist.generateToken(), 
+                userId: userExist._id.toString(),
+            });
+        }else {
+            res.status(401).json({ message : "Invaild email and password" });
+        }
     } catch (error) {
-        res.status(400).send({msg:"Page Not Found !!"});
+        res.status(500).json("Internal Server Error");
     }
 };
 

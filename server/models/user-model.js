@@ -30,9 +30,9 @@ userSchema.pre('save', async function (){
     // console.log("pre method", this);    // here we get the data which we are going to save the info in the db but not saved in the db.
     const user = this;
 
-    // if(!user.isModified("password")){
-    //     next();
-    // }
+    if(!user.isModified("password")){
+        next();
+    }
 
     try {
         const saltRound = await bcrypt.genSalt(10); 
@@ -42,6 +42,11 @@ userSchema.pre('save', async function (){
         next(error);
     }
 });
+
+// compare the password
+userSchema.methods.comparePassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+};
 
 
 // **What is JWT?** 
