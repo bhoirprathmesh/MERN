@@ -1,0 +1,348 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar.css */
+
+/* Header styles */
+header {
+  background-color: #333; /* Dark background */
+  padding: 15px 0; /* Padding for spacing inside the header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Container inside header */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 0 0 50px;
+  padding: 0 30px;
+}
+
+/* Logo section */
+.logo-brand a {
+  color: #ffdd57; /* Yellow color for logo */
+  font-size: 1.8rem; /* Larger logo font */
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase; /* Ensures the text is uppercase */
+}
+
+/* Navigation links */
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 0 0;
+  padding: 0 30px;
+}
+
+nav a {
+  color: #fff; /* White text for links */
+  text-decoration: none;
+  margin-left: 20px; /* Space between links */
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold;
+  padding: 10px 15px; /* Padding around the links */
+  position: relative; /* To position the underline */
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+  color: #ffdd57; /* Yellow color on hover */
+}
+
+/* Active link styling */
+nav a.active {
+  color: #ffdd57;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Positioning the underline at the bottom of the link */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thin underline */
+  background-color: #ffdd57; /* Yellow underline */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Home.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Two column layout for larger screens */
+.grid-two-cols {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Hero Section Styling */
+.section-hero {
+  background-color: #f5f5f5; /* Light background */
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ffdd57;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffc107; /* Darker yellow on hover */
+}
+
+.secondary-btn {
+  background-color: #333;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background-color: #444; /* Lighter black on hover */
+}
+
+/* Hero Image Styling */
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Register.css */
+
+/* Main container for the registration section */
+.section-registration {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5; /* Dark background matching the theme */
+}
+
+/* Form container */
+.registration-form {
+  max-width: 500px;
+  width: 100%;
+  background-color: #333; /* Slightly lighter background for contrast */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Slightly deeper shadow for better elevation */
+}
+
+/* Form heading */
+.main-heading {
+  font-size: 2rem;
+  color: #ffdd57; /* Accent color for heading */
+  margin-bottom: 10px;
+  text-align: center;
+  /* text-shadow:  */
+  /* text-decoration: underline; */
+}
+
+/* Input fields styling */
+.registration-form input,
+.registration-form textarea {
+  width: 100%;
+  padding: 12px; /* Increased padding for better UX */
+  margin: 10px 0;
+  border: 1px solid #555; /* Darker border to match input background */
+  border-radius: 5px;
+  background-color: #444; /* Darker input background */
+  color: #f5f5f5; /* White text for visibility */
+  font-size: 1rem;
+}
+
+.registration-form input:focus,
+.registration-form textarea:focus {
+  border-color: #ffdd57; /* Accent color when focused */
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 221, 87, 0.6); /* Subtle glow effect */
+}
+
+/* Label styling */
+.registration-form label {
+  margin-bottom: 1px;
+  font-size: 1rem;
+  display: block;
+  color: #ffdd57; /* Accent color for labels */
+}
+
+/* Button styling */
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffdd57; /* Accent color for the button */
+  color: #333; /* Dark text on light button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #ffd700; /* Lighter hover effect */
+  transform: translateY(-2px); /* Slight hover elevation effect */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-form {
+    margin: 0 20px;
+  }
+}
+
+/* Additional adjustments */
+.registration-form textarea {
+  height: 120px; /* Adding height for textarea */
+  resize: none; /* Disabling resize for better layout consistency */
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-group .btn {
+  width: 48%;
+  padding: 10px;
+  background-color: #ffdd57;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn-group .btn:hover {
+  background-color: #ffd700;
+}
+
+/* Map Section styling */
+.section-map iframe {
+  margin: 30px 250px;
+  width: 1000px;
+  height: 500px;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adding a slight shadow to the map */
+}

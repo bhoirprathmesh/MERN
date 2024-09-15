@@ -7,16 +7,16 @@ function Navbar() {
     <header>
         <div className='container'>
             <div className='logo-brand'>
-                <NavLink to="/">Website</NavLink>
+                <NavLink to="/">[Website]</NavLink>
             </div>
         </div>
         <nav>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" activeClassName="active">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact</NavLink>
             <NavLink to="/service">Services</NavLink>
             <NavLink to="/login">Login</NavLink>
-            <NavLink to="/register">signup</NavLink>
+            <NavLink to="/register">Signup</NavLink>
         </nav>
     </header>
   )
