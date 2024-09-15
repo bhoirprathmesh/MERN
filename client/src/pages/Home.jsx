@@ -1,4 +1,5 @@
 import React from 'react'
+import Analytics from '../components/Analytics'
 
 function Home() {
   return (
@@ -39,6 +40,7 @@ function Home() {
       </main>
 
       {/* 2nd section  */}
+      <Analytics />
 
       {/* 3rd section  */}
       <section className="section-hero">

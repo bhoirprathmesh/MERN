@@ -348,6 +348,10 @@ body {
 }
 
 /* Map Section styling */
+.section-map {
+  background-color: #f5f5f5;
+}
+
 .section-map iframe {
   margin: 30px 250px;
   width: 1000px;
@@ -355,4 +359,158 @@ body {
   border: 0;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adding a slight shadow to the map */
+}
+
+/* Analytics.css */
+
+/* Analytics section container */
+.section-analytics {
+  padding: 50px 0;
+  margin: 0 50px 30px 50px;
+  background-color: #333; /* Matching dark background for consistency */
+}
+
+/* Grid container for analytics stats */
+.grid-H {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for the analytics data */
+  gap: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Individual stat blocks */
+.div1 {
+  text-align: center;
+  background-color: #444; /* Slightly lighter background for the stats blocks */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin: 0 0 0 50px;
+}
+
+.div1:hover {
+  transform: scale(1.05); /* Subtle hover effect for interaction */
+}
+
+/* Stat numbers styling */
+.div1 h2 {
+  font-size: 2.5rem;
+  color: #ffdd57; /* Accent color for numbers */
+  margin-bottom: 10px;
+}
+
+/* Stat description styling */
+.div1 p {
+  font-size: 1rem;
+  color: #fff; /* White text for description */
+  margin-bottom: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr; /* Adjust to 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr; /* Single column layout for mobile screens */
+  }
+}
+
+/* Footer.css */
+
+/* Footer container */
+footer {
+  background-color: #222; /* Dark background for the footer */
+  padding: 20px 0;
+  text-align: center;
+  color: #ffdd57; /* Accent color for the text */
+  font-size: 1rem;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow to separate from content */
+}
+
+/* Hover effect on the text (optional) */
+footer p:hover {
+  color: #ffd700; /* Lighter hover effect for the text */
+  transition: color 0.3s ease;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Error.css */
+
+/* Error page container */
+#error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+  background-color: #222; /* Dark background */
+  color: #fff; /* White text */
+  text-align: center;
+}
+
+/* Error content container */
+#error-page .content {
+  max-width: 600px;
+  padding: 40px;
+  background-color: #333; /* Slightly lighter background */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 404 header styling */
+#error-page .header {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #ffdd57; /* Accent color for 404 */
+  margin-bottom: 20px;
+}
+
+/* Smaller header for message */
+#error-page h4 {
+  font-size: 1.5rem;
+  color: #ffdd57; /* Accent color */
+  margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+#error-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc; /* Slightly lighter text for readability */
+  margin-bottom: 30px;
+}
+
+/* Button container */
+#error-page .btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Button link styling */
+#error-page .btns a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #ffdd57; /* Accent button color */
+  color: #333; /* Dark text on light button */
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for buttons */
+#error-page .btns a:hover {
+  background-color: #ffd700; /* Lighter hover effect */
 }
