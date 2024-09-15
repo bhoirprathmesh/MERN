@@ -5,7 +5,7 @@ function Home() {
     <>
       <main>
         <section className="section-hero">
-          <div className="container grid grid-two-cols">
+          <div className="container-H grid grid-two-cols">
             <div className="hero-content">
               <p>We are the World Best IT Company</p>
               <h1>Welcome to ..Website..</h1>
@@ -42,7 +42,7 @@ function Home() {
 
       {/* 3rd section  */}
       <section className="section-hero">
-        <div className="container grid grid-two-cols">
+        <div className="container-H grid grid-two-cols">
           {/* hero images  */}
           <div className="hero-image">
             <img

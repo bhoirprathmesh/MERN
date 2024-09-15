@@ -121,10 +121,20 @@ body {
 /* Hero Section Styling */
 .section-hero {
   background-color: #f5f5f5; /* Light background */
-  padding: 80px 0;
+  padding: 50px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container-H {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 0 0 40px;
+  padding: 0 100px;
 }
 
 /* Hero Content */
@@ -219,7 +229,7 @@ body {
   }
 }
 
-/* Register.css */
+/* Register.css, Login.css, Contact.css */
 
 /* Main container for the registration section */
 .section-registration {
