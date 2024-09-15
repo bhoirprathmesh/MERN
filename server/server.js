@@ -1,10 +1,20 @@
 require('dotenv').config();
 const express = require("express");   // we are using express in this application
+const cors = require("cors")
 const app = express();
 const authRoute = require("./router/auth-router");
 const ContactRoute = require("./router/contact-router");
 const connectDb = require("./utils/db");
 const errorMiddleware = require('./middlewares/error-middleware');
+
+//handling cors policy issues
+const corsOptions = {
+    origin: "http://localhost:5173",
+    methods: "GET, POST, PUT, DELETE, OPTIONS, PATCH, HEAD",
+    credentials: true, 
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 //? This line of code adds Express middleware that parses 
