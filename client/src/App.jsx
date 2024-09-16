@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Home from './pages/Home';
@@ -10,9 +9,9 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Error from './pages/Error';
+import Logout from './pages/Logout';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -25,6 +24,7 @@ function App() {
           <Route path="/service" element={ <Service /> }/>
           <Route path="/register" element={ <Register /> }/>
           <Route path="/login" element={ <Login /> }/>
+          <Route path="/logout" element={ <Logout /> }/>
           <Route path="*" element={<Error />} />
         </Routes>
       <Footer />

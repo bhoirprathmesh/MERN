@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../store/auth';
 
 function Register() {
 
@@ -12,6 +13,7 @@ function Register() {
   });
 
   const navigate = useNavigate();
+  const { storeTokenInLS } = useAuth();
   
   const handleInput = (e) => {
     console.log(e);
@@ -37,6 +39,11 @@ function Register() {
       });
       
       if(response.ok){
+        const res_data = await response.json();
+        console.log("Response from server", res_data);
+        //stored the token in the localstoreage
+        storeTokenInLS(res_data.token);
+        // localStorage.setItem("token", res_data.token);  -->we cant you it because we need to use each and every time for that we to create the functions
         setUser({ username: "", email: "", phone: "", password: "" });
         navigate("/login");
       }

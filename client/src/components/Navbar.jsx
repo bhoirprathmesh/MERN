@@ -1,7 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../store/auth';
 
 function Navbar() {
+
+  const { isLoggedIn } = useAuth();
+
   return (
     <header>
         <div className='container'>
@@ -14,8 +18,14 @@ function Navbar() {
             <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>About</NavLink>
             <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
             <NavLink to="/service" className={({ isActive }) => (isActive ? 'active' : '')}>Services</NavLink>
-            <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : '')}>Login</NavLink>
-            <NavLink to="/register" className={({ isActive }) => (isActive ? 'active' : '')}>Signup</NavLink>
+            { isLoggedIn ? ( <NavLink to="/logout" className={({ isActive }) => (isActive ? 'active' : '')}>Logout</NavLink>
+              ) : ( 
+                <>
+                  <NavLink to="/register" className={({ isActive }) => (isActive ? 'active' : '')}>Register</NavLink>
+                  <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : '')}>Login</NavLink>
+                </>
+              )
+            }
         </nav>
     </header>
   )
