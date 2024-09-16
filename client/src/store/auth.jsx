@@ -7,7 +7,7 @@ export const AuthProvider = ({children}) => {
     const [token, setToken] = useState(localStorage.getItem("token"));
 
     const storeTokenInLS = (serverToken) => {
-        setToken(serverToken);
+        setToken(serverToken);  //this is to remove continuous refreshment after login btn
         return localStorage.setItem("token", serverToken);
     };
 
