@@ -107,7 +107,7 @@ const user = async (req, res) => {
     try{
         const userData = req.user;
         console.log(userData);
-        return res.status(200).json({ msg : userData });
+        return res.status(200).json({ userData });
         // res.status(200).json({ msg: "hi user" });  --> to check the route is successfully get the message or not.
     }catch (error) {
         console.log(`error from teh user route, ${error}`);

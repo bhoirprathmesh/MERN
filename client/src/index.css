@@ -455,7 +455,7 @@ footer p:hover {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Full height */
-  background-color: #222; /* Dark background */
+  background-color: #f5f5f5; /* Dark background */
   color: #fff; /* White text */
   text-align: center;
 }
