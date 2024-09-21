@@ -4,6 +4,7 @@ const cors = require("cors")
 const app = express();
 const authRoute = require("./router/auth-router");
 const ContactRoute = require("./router/contact-router");
+const ServiceRoute = require("./router/service-router");
 const connectDb = require("./utils/db");
 const errorMiddleware = require('./middlewares/error-middleware');
 
@@ -28,6 +29,7 @@ app.use(express.json());
 //  it at a specific URL prefix.
 app.use("/api/auth", authRoute);
 app.use("/api/form", ContactRoute);
+app.use("/api/data", ServiceRoute);
 
 app.use(errorMiddleware);
 

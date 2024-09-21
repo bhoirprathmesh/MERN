@@ -6,6 +6,7 @@ export const AuthProvider = ({children}) => {
 
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [user, setUSer] = useState("");
+    const [services, setServices] = useState("");
 
     const storeTokenInLS = (serverToken) => {
         setToken(serverToken);  //this is to remove continuous refreshment after login btn
@@ -41,12 +42,30 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    // to fetch the services from the database
+    const getServices = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/api/data/service',{
+                method: 'GET',
+            });
+
+            if(response.ok) {
+                const data = await response.json();
+                console.log(data.msg);
+                setServices(data.msg);
+            }
+        } catch(error) {
+            console.log(`services frontened error : ${error}`);
+        }
+    }
+
     useEffect( () => {
+        getServices();
         userAuthentication()
     }, []);
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLS, LogoutUser, user }} > 
+        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLS, LogoutUser, user, services }} > 
             {children} 
         </AuthContext.Provider>
     );
