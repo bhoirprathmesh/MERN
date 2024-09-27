@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../store/auth';
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -35,17 +36,19 @@ function Login() {
         },
         body: JSON.stringify(user),
       });
+
+      const res_data = await response.json();
+      console.log("Response from server", res_data.extraDetails);
       
       if(response.ok){
-        alert("Login Successful");
-        const res_data = await response.json();
-        console.log("Response from server", res_data);
         //stored the token in the localstoreage
         storeTokenInLS(res_data.token);
         // localStorage.setItem("token", res_data.token);
         setUser({ email: "", password: "" });
         navigate("/");
+        toast.success("Login Successful !");
       }else {
+        toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
         console.log("Invalid Credentials");
       }
 

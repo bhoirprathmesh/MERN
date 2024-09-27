@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../store/auth';
+import { toast } from 'react-toastify';
 
 function Register() {
 
@@ -37,17 +38,22 @@ function Register() {
         },
         body: JSON.stringify(user),
       });
+
+      // console.log(response);
+      const res_data = await response.json();
+      console.log("Response from server", res_data.extraDetails);
       
       if(response.ok){
-        const res_data = await response.json();
-        console.log("Response from server", res_data);
         //stored the token in the localstoreage
         storeTokenInLS(res_data.token);
         // localStorage.setItem("token", res_data.token);  -->we cant you it because we need to use each and every time for that we to create the functions
         setUser({ username: "", email: "", phone: "", password: "" });
         navigate("/login");
+        toast.success("Registration Successful !");
+      } else {
+        toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
       }
-      console.log(response);
+
     }catch (error) {
       console.log("register", error);
     }
