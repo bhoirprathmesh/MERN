@@ -612,3 +612,331 @@ footer p:hover {
     align-items: flex-start;
   }
 }
+
+/* Admin Header Styles */
+.admin-header {
+  background-color: #333; /* Dark background for the header */
+  padding: 15px 0; /* Padding for spacing */
+  position: sticky; /* Sticky positioning */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Container for header content */
+.admin-header .container {
+  max-width: 1400px; /* Maximum width for the header */
+  margin: 0 auto; /* Center the container */
+  padding: 0 30px; /* Padding for spacing */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
+}
+
+/* Navigation styles */
+.admin-header nav {
+  display: flex; /* Flexbox for navigation items */
+}
+
+/* Navigation list */
+.admin-header ul {
+  list-style-type: none; /* Remove default list styling */
+  display: flex; /* Horizontal list */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Navigation items */
+.admin-header li {
+  margin-left: 20px; /* Space between links */
+}
+
+/* Navigation links */
+.admin-header a {
+  color: #fff; /* White text for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold; /* Bold font */
+  padding: 10px; /* Padding for links */
+  position: relative; /* For pseudo-element positioning */
+  transition: color 0.3s; /* Smooth transition for hover */
+}
+
+/* Hover effect for links */
+.admin-header a:hover {
+  color: #ffdd57; /* Yellow color on hover */
+}
+
+/* Active link styling */
+.admin-header a.active {
+  color: #ffdd57; /* Yellow for active link */
+}
+
+/* Optional icon styling */
+.admin-header a svg {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .admin-header nav {
+    flex-direction: column; /* Stack links vertically on small screens */
+  }
+
+  .admin-header li {
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 10px; /* Space between links */
+  }
+}
+
+/* Admin Users Section Styles */
+.admin-users-section {
+  padding: 40px 20px; /* Adjust padding for spacing */
+  background-color: #f5f5f5; /* Light background for the section */
+}
+
+/* Container for user data */
+.admin-users {
+  margin: 20px auto; /* Centering the container */
+  max-width: 1200px; /* Limiting the width */
+  background-color: #fff; /* White background for table */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  overflow: hidden; /* Ensuring child elements stay within rounded corners */
+}
+
+/* Heading style */
+.admin-users-section h1 {
+  text-align: center; /* Center the heading */
+  color: #333; /* Dark color for text */
+  font-size: 2.5rem; /* Larger font size for the title */
+  margin-bottom: 20px; /* Spacing below the title */
+}
+
+/* Table Styles */
+table {
+  width: 100%; /* Full width for the table */
+  border-collapse: collapse; /* Remove gaps between cells */
+}
+
+th, td {
+  padding: 15px; /* Padding for table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Bottom border for cells */
+}
+
+th {
+  background-color: #4CAF50; /* Darker green for header */
+  color: white; /* White text color for header */
+}
+
+/* Row hover effect */
+tr:hover {
+  background-color: #e8f5e9; /* Light green for row hover */
+}
+
+/* Button styles */
+.btn {
+  background-color: #ff4444; /* Red background for delete button */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Padding for buttons */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn:hover {
+  background-color: #e63946; /* Darker red on hover */
+}
+
+/* Edit link styles */
+a {
+  color: #2196F3; /* Blue for edit links */
+  text-decoration: none; /* Remove underline */
+  padding: 10px; /* Padding for links */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+a:hover {
+  background-color: #e3f2fd; /* Light blue background on hover */
+}
+
+/* No users found message */
+td[colspan="5"] {
+  text-align: center; /* Center the text */
+  color: #999; /* Light gray for no users message */
+  font-style: italic; /* Italic text style */
+  padding: 20px 0; /* Padding for spacing */
+}
+
+/* Admin Contacts Section Styles */
+.admin-contacts-section {
+  padding: 50px 20px; /* Overall padding for the section */
+  background-color: #ffffff; /* White background for contrast */
+}
+
+/* Section Heading */
+.admin-contacts-section h1 {
+  text-align: center; /* Center the heading */
+  font-size: 2.5rem; /* Font size for the heading */
+  color: #2c3e50; /* Dark blue color for text */
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+/* Container for contacts */
+.admin-contacts-section .container {
+  display: grid; /* Grid layout for contact cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between contact items */
+  max-width: 1200px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Individual contact card */
+.admin-contacts-section .container > div {
+  background-color: #f9f9f9; /* Light gray background for contact cards */
+  padding: 20px; /* Padding inside the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for contact cards */
+.admin-contacts-section .container > div:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Contact details styling */
+.admin-contacts-section p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 1rem; /* Font size for contact details */
+  color: #34495e; /* Darker gray for text */
+}
+
+/* Button styling */
+.admin-contacts-section .btn {
+  padding: 10px 15px; /* Padding for button */
+  background-color: #e74c3c; /* Red background for delete button */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+  margin-top: 10px; /* Space above button */
+}
+
+/* Hover effect for button */
+.admin-contacts-section .btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-contacts-section h1 {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+
+  .admin-contacts-section .container {
+    padding: 0 10px; /* Padding adjustment for smaller screens */
+  }
+}
+
+/* Section Contact Styles */
+.section-contact {
+  padding: 50px 20px; /* Padding for the contact section */
+  background-color: #ffffff; /* White background for contrast */
+}
+
+/* Main Heading */
+.main-heading {
+  text-align: center; /* Center the heading */
+  font-size: 2.5rem; /* Font size for the heading */
+  color: #2c3e50; /* Dark blue color for text */
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+/* Container for Form */
+.container {
+  max-width: 1200px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Grid layout for form */
+.grid {
+  display: grid; /* Grid layout for form and content */
+}
+
+/* Two Columns Layout */
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 20px; /* Space between columns */
+}
+
+/* Section Form Styles */
+.section-form {
+  background-color: #f9f9f9; /* Light gray background for the form */
+  padding: 20px; /* Padding inside the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+}
+
+/* Form Elements */
+form div {
+  margin-bottom: 15px; /* Space between form elements */
+}
+
+/* Label Styles */
+label {
+  display: block; /* Block display for labels */
+  margin-bottom: 5px; /* Space below the label */
+  font-weight: bold; /* Bold font for labels */
+  color: #34495e; /* Darker gray for text */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="phone"] {
+  width: 100%; /* Full width inputs */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size for inputs */
+  color: #34495e; /* Darker gray for input text */
+}
+
+/* Input Focus Styles */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="phone"]:focus {
+  border-color: #2980b9; /* Blue border on focus */
+  outline: none; /* Remove outline */
+}
+
+/* Button Styles */
+button[type="submit"] {
+  background-color: #3498db; /* Blue background for the button */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+}
+
+/* Button Hover Effect */
+button[type="submit"]:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+}

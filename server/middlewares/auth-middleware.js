@@ -11,7 +11,7 @@ const authMiddleware = async (req, res, next) => {
         .json({ message: "Unauthorized HTTP, Token not provided"});
     }
 
-    // console.log("token from auth middleware", token);  --> only for the checking purpose
+    console.log("token from auth middleware", token);  //--> only for the checking purpose
     // Assuming token is in the format "Bearer <jwtToken>, Removing the "Bearer" prefix"
 
     const jwtToken = token.replace("Bearer", "").trim();
@@ -40,8 +40,6 @@ const authMiddleware = async (req, res, next) => {
     }catch(error) {
         return res.status(401).json({ message: "Unauthorized. Invaid token." });
     }
-
-    next();
 };
 
 module.exports = authMiddleware;
