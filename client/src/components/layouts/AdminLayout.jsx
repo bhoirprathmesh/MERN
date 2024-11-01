@@ -8,14 +8,14 @@ function AdminLayout() {
     console.log("admin layout ", user);
 
     // // Handle loading state
-    // if (isLoading) {
-    //     return <h1>Loading ...</h1>;
-    // }
+    if (isLoading) {
+        return <h1>Loading ...</h1>;
+    }
 
     // Ensure user exists before checking isAdmin
-    // if (!user || !user.isAdmin) {
-    //     return <Navigate to="/" />;
-    // }
+    if (!user || !user.isAdmin) {
+        return <Navigate to="/" />;
+    }
 
     return (
       <>

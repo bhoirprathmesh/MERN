@@ -7,8 +7,11 @@ export const AuthProvider = ({children}) => {
 
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [user, setUSer] = useState("");
-    const [services, setServices] = useState("");
+    const[ isLoading, setIsLoading ] = useState(true);
+    const [services, setServices] = useState([]);
     const authorizationToken = `Bearer ${token}`;
+
+    const API = import.meta.env.VITE_APP_URI_API;
 
     const storeTokenInLS = (serverToken) => {
         setToken(serverToken);  //this is to remove continuous refreshment after login btn
@@ -27,7 +30,8 @@ export const AuthProvider = ({children}) => {
     // JWT Authentication - to get currently logged in user data 
     const userAuthentication = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/user', {
+            setIsLoading(true);
+            const response = await fetch(`${API}/api/auth/user`, {
                 method: 'GET',
                 headers: {
                     Authorization: authorizationToken,
@@ -37,7 +41,11 @@ export const AuthProvider = ({children}) => {
             if(response.ok) {
                 const data = await response.json(); 
                 console.log("user data ", data.userData);    
-                setUSer(data.userData);            
+                setUSer(data.userData); 
+                setIsLoading(false);           
+            }else{
+                console.log("Error Fetching User Data");
+                setIsLoading(false);  
             }
         } catch(error) {
             console.log("Error Fetching User Data");
@@ -47,7 +55,7 @@ export const AuthProvider = ({children}) => {
     // to fetch the services from the database
     const getServices = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/data/service',{
+            const response = await fetch(`${API}/api/data/service`,{
                 method: 'GET',
             });
 
@@ -67,7 +75,7 @@ export const AuthProvider = ({children}) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLS, LogoutUser, user, services, authorizationToken }} > 
+        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLS, LogoutUser, user, services, authorizationToken, isLoading, API }} > 
             {children} 
         </AuthContext.Provider>
     );

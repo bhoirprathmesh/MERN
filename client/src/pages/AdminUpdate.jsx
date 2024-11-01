@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 
 function AdminUpdate() {
   const navigate = useNavigate();
+  const { authorizationToken, API } = useAuth();
 
     const [data, setData] = useState({
         username: "",
@@ -14,12 +15,11 @@ function AdminUpdate() {
     
       const params = useParams();
       console.log("params single user: ", params);
-      const { authorizationToken, API } = useAuth();
     
       //   get single user data
       const getSingleUserData = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/admin/users/${params.id}`, {
+          const response = await fetch(`${API}/api/admin/users/${params.id}`, {
             method: "GET",
             headers: {
               Authorization: authorizationToken,
@@ -57,7 +57,7 @@ function AdminUpdate() {
     
         try {
           const response = await fetch(
-            `http://localhost:5000/api/admin/users/update/${params.id}`,
+            `${API}/api/admin/users/update/${params.id}`,
             {
               method: "PATCH",
               headers: {

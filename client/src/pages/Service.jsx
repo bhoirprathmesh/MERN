@@ -3,7 +3,7 @@ import { useAuth } from "../store/auth";
 
 function Service() {
 
-  const { services } = useAuth();
+  const { services, API } = useAuth();
 
   return (
     <section className="section-services">
