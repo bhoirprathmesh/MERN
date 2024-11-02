@@ -84,30 +84,6 @@ nav a.active::after {
   background-color: #ffdd57; /* Yellow underline */
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    margin-left: 0;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 576px) {
-  nav a {
-    font-size: 0.9rem;
-  }
-}
-
 /* Home.css */
 
 body {
@@ -209,33 +185,6 @@ body {
   border-radius: 8px;
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  .grid-two-cols {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
 /* Register.css, Login.css, Contact.css */
 
 /* Main container for the registration section */
@@ -314,17 +263,6 @@ body {
   transform: translateY(-2px); /* Slight hover elevation effect */
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .registration-form {
-    margin: 0 20px;
-  }
-}
-
 /* Additional adjustments */
 .registration-form textarea {
   height: 120px; /* Adding height for textarea */
@@ -352,20 +290,6 @@ body {
 
 .btn-group .btn:hover {
   background-color: #ffd700;
-}
-
-/* Map Section styling */
-.section-map {
-  background-color: #f5f5f5;
-}
-
-.section-map iframe {
-  margin: 30px 250px;
-  width: 1000px;
-  height: 500px;
-  border: 0;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adding a slight shadow to the map */
 }
 
 /* Analytics.css */
@@ -415,19 +339,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr 1fr; /* Adjust to 2 columns on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr; /* Single column layout for mobile screens */
-  }
-}
-
 /* Footer.css */
 
 /* Footer container */
@@ -444,14 +355,6 @@ footer {
 footer p:hover {
   color: #ffd700; /* Lighter hover effect for the text */
   transition: color 0.3s ease;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  footer {
-    padding: 15px 0;
-    font-size: 0.9rem;
-  }
 }
 
 /* Error.css */
@@ -595,178 +498,123 @@ footer p:hover {
   margin-bottom: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .section-services .grid-three-cols {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .section-services .grid-three-cols {
-    grid-template-columns: 1fr;
-  }
-
-  .section-services .card-details .grid-two-cols {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* Admin Header Styles */
+/* Admin Header Container */
 .admin-header {
-  background-color: #333; /* Dark background for the header */
-  padding: 15px 0; /* Padding for spacing */
-  position: sticky; /* Sticky positioning */
-  top: 0; /* Stick to the top of the viewport */
-  z-index: 1000; /* Ensure it's above other content */
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+  border-bottom: 2px solid #444;
 }
 
-/* Container for header content */
 .admin-header .container {
-  max-width: 1400px; /* Maximum width for the header */
-  margin: 0 auto; /* Center the container */
-  padding: 0 30px; /* Padding for spacing */
-  display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Space between elements */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  justify-content: center;
 }
 
-/* Navigation styles */
-.admin-header nav {
-  display: flex; /* Flexbox for navigation items */
+.admin-header nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
 }
 
-/* Navigation list */
-.admin-header ul {
-  list-style-type: none; /* Remove default list styling */
-  display: flex; /* Horizontal list */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+.admin-header nav ul li {
+  font-size: 1rem;
 }
 
-/* Navigation items */
-.admin-header li {
-  margin-left: 20px; /* Space between links */
+.admin-header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
 }
 
-/* Navigation links */
-.admin-header a {
-  color: #fff; /* White text for links */
-  text-decoration: none; /* Remove underline */
-  font-size: 1rem; /* Standard font size */
-  font-weight: bold; /* Bold font */
-  padding: 10px; /* Padding for links */
-  position: relative; /* For pseudo-element positioning */
-  transition: color 0.3s; /* Smooth transition for hover */
+.admin-header nav ul li a:hover {
+  background-color: #555;
+  color: #eee;
 }
 
-/* Hover effect for links */
-.admin-header a:hover {
-  color: #ffdd57; /* Yellow color on hover */
+.admin-header nav ul li a.active {
+  background-color: #444;
+  color: #fff;
 }
 
-/* Active link styling */
-.admin-header a.active {
-  color: #ffdd57; /* Yellow for active link */
-}
-
-/* Optional icon styling */
-.admin-header a svg {
-  margin-right: 5px; /* Space between icon and text */
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  .admin-header nav {
-    flex-direction: column; /* Stack links vertically on small screens */
-  }
-
-  .admin-header li {
-    margin-left: 0; /* Remove left margin */
-    margin-bottom: 10px; /* Space between links */
-  }
-}
-
-/* Admin Users Section Styles */
+/* Admin Users Section */
 .admin-users-section {
-  padding: 40px 20px; /* Adjust padding for spacing */
-  background-color: #f5f5f5; /* Light background for the section */
+  padding: 20px 0;
+  background-color: #f9f9f9;
 }
 
-/* Container for user data */
-.admin-users {
-  margin: 20px auto; /* Centering the container */
-  max-width: 1200px; /* Limiting the width */
-  background-color: #fff; /* White background for table */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  overflow: hidden; /* Ensuring child elements stay within rounded corners */
-}
-
-/* Heading style */
 .admin-users-section h1 {
-  text-align: center; /* Center the heading */
-  color: #333; /* Dark color for text */
-  font-size: 2.5rem; /* Larger font size for the title */
-  margin-bottom: 20px; /* Spacing below the title */
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Table Styles */
-table {
-  width: 100%; /* Full width for the table */
-  border-collapse: collapse; /* Remove gaps between cells */
+.admin-users-section .admin-users {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-x: auto;
 }
 
-th, td {
-  padding: 15px; /* Padding for table cells */
-  text-align: left; /* Align text to the left */
-  border-bottom: 1px solid #ddd; /* Bottom border for cells */
+.admin-users-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-th {
-  background-color: #4CAF50; /* Darker green for header */
-  color: white; /* White text color for header */
+.admin-users-section th,
+.admin-users-section td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
-/* Row hover effect */
-tr:hover {
-  background-color: #e8f5e9; /* Light green for row hover */
+.admin-users-section th {
+  background-color: #333;
+  color: #fff;
 }
 
-/* Button styles */
-.btn {
-  background-color: #ff4444; /* Red background for delete button */
-  color: white; /* White text color */
-  padding: 10px 15px; /* Padding for buttons */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor */
-  transition: background-color 0.3s; /* Transition for hover effect */
+.admin-users-section tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
-.btn:hover {
-  background-color: #e63946; /* Darker red on hover */
+.admin-users-section tbody tr:hover {
+  background-color: #e6e6e6;
 }
 
-/* Edit link styles */
-a {
-  color: #2196F3; /* Blue for edit links */
-  text-decoration: none; /* Remove underline */
-  padding: 10px; /* Padding for links */
-  transition: background-color 0.3s; /* Transition for hover effect */
+.admin-users-section .btn {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-a:hover {
-  background-color: #e3f2fd; /* Light blue background on hover */
+.admin-users-section .btn:hover {
+  background-color: #c9302c;
 }
 
-/* No users found message */
-td[colspan="5"] {
-  text-align: center; /* Center the text */
-  color: #999; /* Light gray for no users message */
-  font-style: italic; /* Italic text style */
-  padding: 20px 0; /* Padding for spacing */
+.admin-users-section a {
+  color: #337ab7;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.admin-users-section a:hover {
+  background-color: #e6e6e6;
 }
 
 /* Admin Contacts Section Styles */
@@ -831,112 +679,4 @@ td[colspan="5"] {
 .admin-contacts-section .btn:hover {
   background-color: #c0392b; /* Darker red on hover */
   transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .admin-contacts-section h1 {
-    font-size: 2rem; /* Smaller font size for smaller screens */
-  }
-
-  .admin-contacts-section .container {
-    padding: 0 10px; /* Padding adjustment for smaller screens */
-  }
-}
-
-/* Section Contact Styles */
-.section-contact {
-  padding: 50px 20px; /* Padding for the contact section */
-  background-color: #ffffff; /* White background for contrast */
-}
-
-/* Main Heading */
-.main-heading {
-  text-align: center; /* Center the heading */
-  font-size: 2.5rem; /* Font size for the heading */
-  color: #2c3e50; /* Dark blue color for text */
-  margin-bottom: 30px; /* Space below the heading */
-}
-
-/* Container for Form */
-.container {
-  max-width: 1200px; /* Maximum width for the container */
-  margin: 0 auto; /* Center the container */
-}
-
-/* Grid layout for form */
-.grid {
-  display: grid; /* Grid layout for form and content */
-}
-
-/* Two Columns Layout */
-.grid-two-cols {
-  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-  gap: 20px; /* Space between columns */
-}
-
-/* Section Form Styles */
-.section-form {
-  background-color: #f9f9f9; /* Light gray background for the form */
-  padding: 20px; /* Padding inside the form */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
-}
-
-/* Form Elements */
-form div {
-  margin-bottom: 15px; /* Space between form elements */
-}
-
-/* Label Styles */
-label {
-  display: block; /* Block display for labels */
-  margin-bottom: 5px; /* Space below the label */
-  font-weight: bold; /* Bold font for labels */
-  color: #34495e; /* Darker gray for text */
-}
-
-/* Input Styles */
-input[type="text"],
-input[type="email"],
-input[type="phone"] {
-  width: 100%; /* Full width inputs */
-  padding: 10px; /* Padding inside inputs */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1rem; /* Font size for inputs */
-  color: #34495e; /* Darker gray for input text */
-}
-
-/* Input Focus Styles */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="phone"]:focus {
-  border-color: #2980b9; /* Blue border on focus */
-  outline: none; /* Remove outline */
-}
-
-/* Button Styles */
-button[type="submit"] {
-  background-color: #3498db; /* Blue background for the button */
-  color: #fff; /* White text */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 15px; /* Padding for the button */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-weight: bold; /* Bold text */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
-}
-
-/* Button Hover Effect */
-button[type="submit"]:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .grid-two-cols {
-    grid-template-columns: 1fr; /* Single column layout on smaller screens */
-  }
 }
